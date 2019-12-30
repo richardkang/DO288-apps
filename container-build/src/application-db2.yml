@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DB2Dialect
+        format_sql: true
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+    url: 'jdbc:db2://${DB2_SERVER}/${DB2_DATABASE}:currentSchema=${DB2_SCHEMA};retrieveMessagesFromServerOnGetMessage=true;blockingReadConnectionTimeout=180;keepAliveTimeOut=10;'
+    username: '${DB2_USERNAME}'
+    password: '${DB2_PASSWD}'
+    hikari:
+      schema: '${DB2_SCHEMA}'
+      maximumPoolSize: 30
+      minimumIdle: 5
+      idleTimeout: 600000
+      connectionTimeout: 30000
+      maxLifetime: 1800000
+      autoCommit: false
+      connectionTestQuery: 'values 1'
