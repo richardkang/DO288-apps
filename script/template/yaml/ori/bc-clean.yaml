@@ -1,10 +1,18 @@
+apiVersion: v1
+items:
 - apiVersion: build.openshift.io/v1
   kind: BuildConfig
   metadata:
     annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-02-11T02:25:09Z"
     labels:
       app: quotesapi
     name: quotesapi
+    namespace: kangbc-tw-ibm-com-quotes-dev
+    resourceVersion: "45434744"
+    selfLink: /apis/build.openshift.io/v1/namespaces/kangbc-tw-ibm-com-quotes-dev/buildconfigs/quotesapi
+    uid: b996bd6e-4c75-11ea-b4a5-0a580a82003d
   spec:
     failedBuildsHistoryLimit: 5
     nodeSelector: null
@@ -37,4 +45,11 @@
       type: Generic
     - type: ConfigChange
     - imageChange:
+        lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:d691584cc4879bf03db936666ae267e482ee9af083a4f94122c172ad82790b8d
       type: ImageChange
+  status:
+    lastVersion: 1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

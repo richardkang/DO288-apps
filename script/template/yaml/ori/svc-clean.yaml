@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-02-11T02:25:09Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: kangbc-tw-ibm-com-quotes-dev
+    resourceVersion: "45434741"
+    selfLink: /api/v1/namespaces/kangbc-tw-ibm-com-quotes-dev/services/quotesapi
+    uid: b99e6a10-4c75-11ea-90e5-0a9134cf410e
+  spec:
+    clusterIP: 172.30.47.167
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app: quotesapi
+      deploymentconfig: quotesapi
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-02-11T02:24:38Z"
+    labels:
+      app: quotesdb
+    name: quotesdb
+    namespace: kangbc-tw-ibm-com-quotes-dev
+    resourceVersion: "45434533"
+    selfLink: /api/v1/namespaces/kangbc-tw-ibm-com-quotes-dev/services/quotesdb
+    uid: a7115f9b-4c75-11ea-97ed-024747632530
+  spec:
+    clusterIP: 172.30.78.56
+    ports:
+    - name: 3306-tcp
+      port: 3306
+      protocol: TCP
+      targetPort: 3306
+    selector:
+      app: quotesdb
+      deploymentconfig: quotesdb
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

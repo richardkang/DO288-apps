@@ -1,0 +1,39 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2020-02-11T02:27:59Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: kangbc-tw-ibm-com-quotes-dev
+    resourceVersion: "45435746"
+    selfLink: /apis/route.openshift.io/v1/namespaces/kangbc-tw-ibm-com-quotes-dev/routes/quotesapi
+    uid: 1edf2d78-4c76-11ea-b4a5-0a580a82003d
+  spec:
+    host: quotesapi-kangbc-tw-ibm-com-quotes-dev.apps.ocp-ap3.prod.nextcle.com
+    port:
+      targetPort: 8080-tcp
+    subdomain: ""
+    to:
+      kind: Service
+      name: quotesapi
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2020-02-11T02:27:59Z"
+        status: "True"
+        type: Admitted
+      host: quotesapi-kangbc-tw-ibm-com-quotes-dev.apps.ocp-ap3.prod.nextcle.com
+      routerCanonicalHostname: apps.ocp-ap3.prod.nextcle.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
