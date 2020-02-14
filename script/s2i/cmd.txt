@@ -4,4 +4,4 @@ podman login -u richardkang -p ieoasl1qaz quay.io
 
 oc import-image httpd --from=quay.io/richardkang/httpd-24-rhel7 --confirm
 
-
+oc new-app httpd:latest~https://github.com/richardkang/DO288-apps --context-dir s2i-scripts
