@@ -98,7 +98,6 @@ objects:
             value: quotesdb
           - name: DATABASE_USER
             value: quoteapp
-          image: image-registry.openshift-image-registry.svc:5000/kangbc-tw-ibm-com-quotes-dev/quotesapi@sha256:3ba5e75afa61b86bd127f8899679ca1f2896990cb2868c9da91e4ea044bc0aa9
           imagePullPolicy: Always
           name: quotesapi
           ports:
@@ -124,7 +123,6 @@ objects:
         from:
           kind: ImageStreamTag
           name: quotesapi:latest
-          namespace: kangbc-tw-ibm-com-quotes-dev
       type: ImageChange
 - apiVersion: apps.openshift.io/v1
   kind: DeploymentConfig
@@ -164,7 +162,6 @@ objects:
             value: ${PASSWORD}
           - name: MYSQL_USER
             value: quoteapp
-          image: image-registry.openshift-image-registry.svc:5000/openshift/mysql@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
           imagePullPolicy: IfNotPresent
           name: quotesdb
           ports:
