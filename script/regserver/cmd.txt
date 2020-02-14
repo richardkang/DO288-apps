@@ -1,0 +1,6 @@
+oc project xx-project
+
+oc get is -n s2i-project
+oc policy add-role-to-user -n s2i-project system:image-puller system:serviceaccount:xx-project:default
+
+sudo podman pull default-route-openshift-image-registry.apps.ocp-ap3.prod.nextcle.com/s2i-project/httpd
