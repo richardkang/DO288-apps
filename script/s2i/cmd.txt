@@ -1,0 +1,7 @@
+skopeo copy --dest-creds richardkang:ieoasl1qaz docker://registry.access.redhat.com/rhscl/httpd-24-rhel7 docker://quay.io/richardkang/httpd-24-rhel7
+
+podman login -u richardkang -p ieoasl1qaz quay.io
+
+oc import-image httpd --from=quay.io/richardkang/httpd-24-rhel7 --confirm
+
+
