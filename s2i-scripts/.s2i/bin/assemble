@@ -9,6 +9,8 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
+echo "---> add mail.py"
+echo "print(\"Hello ! edit mail.py\")" > ./mail.py
 
 echo "---> Installing application source"
 cp -Rf /tmp/src/*.html ./
