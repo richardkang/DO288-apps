@@ -9,12 +9,14 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
+echo "---> add mail.py"
+echo "print(\"Hello ! edit mail.py\")" > ./mail.py
 
 echo "---> Installing application source"
 cp -Rf /tmp/src/*.html ./
 
-DATE=`date "+%b %d, %Y @ %H:%M %p"`
-
+#DATE=`date "+%b %d, %Y @ %H:%M %p"`
+DATE=`date +%Y-%M-%d`
 echo "---> Creating info page"
 echo "Page built on $DATE" >> ./info.html
 echo "Proudly served by Apache HTTP Server version $HTTPD_VERSION" >> ./info.html
