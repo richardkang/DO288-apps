@@ -14,7 +14,7 @@ exports.context = function(server, path, itemsModel) {
     server.get(context + '-count', this.count);
     server.post(context + '/', this.save);
     server.del(context + '/:id', this.destroy);
-    server.get(context + '/msg', this.msg);
+    server.get(context + '-msg', this.msg);
     
     model = itemsModel;
 };
@@ -76,12 +76,12 @@ exports.read = function(req, res, next) {
 };
 
 
-exports.count = function(req, res, next) {
+exports.msg = function(req, res, next) {
     var msg = process.env.APP_MSG;
     res.send('Hello World! APP_MSG=['+msg+'] \n');
 };
 
-exports.msg = function(req, res, next) {
+exports.count = function(req, res, next) {
     model.countAll(function(err, n) {
         if (err) {
             res.send(err);
