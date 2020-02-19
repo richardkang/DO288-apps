@@ -7,8 +7,11 @@ metadata:
     iconClass: icon-nodejs
     tags: nodejs,mysql
   name: node-mysql
-  labels:
-      template: node-mysql
+  creationTimestamp: "2020-02-11T02:25:09Z"
+  namespace: openshift
+  resourceVersion: "45434744"
+  selfLink: /apis/build.openshift.io/v1/namespaces/openshift/template
+  uid: b996bd6e-4c75-11ea-b4a5-0a580a82003d
 objects:
 - apiVersion: image.openshift.io/v1
   kind: ImageStream
