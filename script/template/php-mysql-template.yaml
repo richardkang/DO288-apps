@@ -16,6 +16,7 @@ objects:
     annotations:
     labels:
       app: todoapp
+      template: example-node-mysql
     name: todoapp
   spec:
     lookupPolicy:
@@ -26,6 +27,7 @@ objects:
     annotations:
     labels:
       app: todoapp
+      template: example-node-mysql
     name: todoapp
   spec:
     failedBuildsHistoryLimit: 5
@@ -69,6 +71,7 @@ objects:
     annotations:
     labels:
       app: todoapp
+      template: example-node-mysql
     name: todoapp
   spec:
     replicas: 1
@@ -136,6 +139,7 @@ objects:
     annotations:
     labels:
       app: tododb
+      template: example-node-mysql
     name: tododb
   spec:
     replicas: 1
@@ -204,6 +208,7 @@ objects:
     annotations:
     labels:
       app: todoapp
+      template: example-node-mysql
     name: todoapp
   spec:
     ports:
@@ -222,6 +227,7 @@ objects:
     annotations:
     labels:
       app: tododb
+      template: example-node-mysql
     name: tododb
   spec:
     ports:
@@ -239,6 +245,7 @@ objects:
   metadata:
     labels:
       app: todoapp
+      template: example-node-mysql
     name: todoapp
   spec:
     host: ${HOSTNAME}
