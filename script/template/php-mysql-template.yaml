@@ -6,7 +6,9 @@ metadata:
     description: The Todo application provides an HTTP API back-end and an Angular front-end.
     iconClass: icon-nodejs
     tags: nodejs,mysql
-  name: todo
+  name: example-node-mysql
+  labels:
+      template: example-node-mysql
 objects:
 - apiVersion: image.openshift.io/v1
   kind: ImageStream
@@ -102,6 +104,8 @@ objects:
             value: todoapp
           - name: DATABASE_INIT
             value: ${CLEAN_DATABASE}
+          - name: APP_MSG
+            value: ${APP_MSG}            
           imagePullPolicy: Always
           name: todoapp
           ports:
@@ -249,6 +253,7 @@ parameters:
 - name: APP_GIT_URL
   displayName: Aplication source Git URL
   description: Git URL where application source is stored
+  value: https://github.com/${RHT_OCP4_GITHUB_USER}/DO288-apps
   required: true
 - name: HOSTNAME
   displayName: Aplication Hostname
@@ -257,6 +262,7 @@ parameters:
 - name: NPM_PROXY
   displayName: Npm proxy server URL
   description: URL to a server that provides npm dependencies
+  value: http://${RHT_OCP4_NEXUS_SERVER}/repository/nodejs
   required: true
 - name: SECRET
   displayName: Webhook Secret
@@ -268,8 +274,13 @@ parameters:
   description: db password
   generate: expression
   from: '[a-zA-Z0-9]{40}'
+  value: mypass
 - name: CLEAN_DATABASE
   displayName: init db
   description: init db 
   required: true
   value: "true"
+- name: APP_MSG
+  displayName: app message
+  description: app message
+  required: false
