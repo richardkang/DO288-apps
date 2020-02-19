@@ -77,8 +77,8 @@ exports.read = function(req, res, next) {
 
 
 exports.msg = function(req, res, next) {
-    var msg = process.env.APP_MSG;
-    res.send('Hello World! APP_MSG=['+msg+'] \n');
+    var msg = process.env.RESPONSE;
+    res.send('Hello World! RESPONSE=['+msg+'] \n');
 };
 
 exports.count = function(req, res, next) {
