@@ -253,7 +253,7 @@ parameters:
 - name: APP_GIT_URL
   displayName: Aplication source Git URL
   description: Git URL where application source is stored
-  value: https://github.com/${RHT_OCP4_GITHUB_USER}/DO288-apps
+  value: https://github.com/richardkang/DO288-apps
   required: true
 - name: HOSTNAME
   displayName: Aplication Hostname
@@ -262,7 +262,7 @@ parameters:
 - name: NPM_PROXY
   displayName: Npm proxy server URL
   description: URL to a server that provides npm dependencies
-  value: http://${RHT_OCP4_NEXUS_SERVER}/repository/nodejs
+  value: http://nexus-common.apps.ocp-ap3.prod.nextcle.com/repository/nodejs
   required: true
 - name: SECRET
   displayName: Webhook Secret
