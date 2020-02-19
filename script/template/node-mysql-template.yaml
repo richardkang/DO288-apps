@@ -6,9 +6,9 @@ metadata:
     description: The Todo application provides an HTTP API back-end and an Angular front-end.
     iconClass: icon-nodejs
     tags: nodejs,mysql
-  name: example-node-mysql
+  name: node-mysql
   labels:
-      template: example-node-mysql
+      template: node-mysql
 objects:
 - apiVersion: image.openshift.io/v1
   kind: ImageStream
@@ -16,7 +16,6 @@ objects:
     annotations:
     labels:
       app: todoapp
-      template: example-node-mysql
     name: todoapp
   spec:
     lookupPolicy:
@@ -27,7 +26,6 @@ objects:
     annotations:
     labels:
       app: todoapp
-      template: example-node-mysql
     name: todoapp
   spec:
     failedBuildsHistoryLimit: 5
@@ -51,7 +49,7 @@ objects:
           value: ${NPM_PROXY}
         from:
           kind: ImageStreamTag
-          name: nodejs:8
+          name: nodejs:8.x
           namespace: openshift
       type: Source
     successfulBuildsHistoryLimit: 5
@@ -71,7 +69,6 @@ objects:
     annotations:
     labels:
       app: todoapp
-      template: example-node-mysql
     name: todoapp
   spec:
     replicas: 1
@@ -106,9 +103,7 @@ objects:
           - name: DATABASE_USER
             value: todoapp
           - name: DATABASE_INIT
-            value: ${CLEAN_DATABASE}
-          - name: APP_MSG
-            value: ${APP_MSG}            
+            value: ${CLEAN_DATABASE}      
           imagePullPolicy: Always
           name: todoapp
           ports:
@@ -139,7 +134,6 @@ objects:
     annotations:
     labels:
       app: tododb
-      template: example-node-mysql
     name: tododb
   spec:
     replicas: 1
@@ -199,7 +193,7 @@ objects:
         - tododb
         from:
           kind: ImageStreamTag
-          name: mysql:5.7
+          name: mysql:5.x
           namespace: openshift
       type: ImageChange
 - apiVersion: v1
@@ -208,7 +202,6 @@ objects:
     annotations:
     labels:
       app: todoapp
-      template: example-node-mysql
     name: todoapp
   spec:
     ports:
@@ -227,7 +220,6 @@ objects:
     annotations:
     labels:
       app: tododb
-      template: example-node-mysql
     name: tododb
   spec:
     ports:
@@ -245,7 +237,6 @@ objects:
   metadata:
     labels:
       app: todoapp
-      template: example-node-mysql
     name: todoapp
   spec:
     host: ${HOSTNAME}
@@ -285,9 +276,4 @@ parameters:
 - name: CLEAN_DATABASE
   displayName: init db
   description: init db 
-  required: true
   value: "true"
-- name: APP_MSG
-  displayName: app message
-  description: app message
-  required: false
