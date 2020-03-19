@@ -12,7 +12,7 @@ config_s2i
 cp -Rf /tmp/src/* ./
 DATE=`date "+%Y-%m-%d"`
 echo "info.html create by : $DATE" >> info.html
-echo "info page .............." >> info.html
+echo " info page .............." >> info.html
 echo "create info.html"
 
 
