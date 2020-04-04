@@ -12,8 +12,8 @@ pipeline {
 
     environment {
         //TODO: Customize these variables for your environment
-        DEV_PROJECT = "kangbc-tw-ibm-com-movies-dev"
-        STAGE_PROJECT = "kangbc-tw-ibm-com-movies-stage"
+        DEV_PROJECT = project-sit02"
+        STAGE_PROJECT = "richard-uat"
         APP_GIT_URL = "https://github.com/richardkang/DO288-apps"
         NEXUS_SERVER = "http://nexus-common.apps.ocp-na2.prod.nextcle.com/repository/java"
 
